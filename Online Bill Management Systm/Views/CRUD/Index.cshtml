@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Online_Bill_Management_Systm.BILL>
+
+@{
+    ViewBag.Title = "Bill Index";
+}
+
+<h2>All Your Bills are here</h2>
+
+<p>
+    @Html.ActionLink("Add New Bill", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SHOPNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AMOUNT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ITEM)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SHOPNAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ADDRESS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DATE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AMOUNT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ITEM)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BILLID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BILLID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BILLID })
+                </td>
+            </tr>
+        }
+    }
+    </table>

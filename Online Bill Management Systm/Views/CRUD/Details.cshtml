@@ -1,0 +1,65 @@
+﻿@model Online_Bill_Management_Systm.Models.BILLClass
+
+@{
+    ViewBag.Title = "Bill Details";
+}
+
+<h2>Bill's Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BILLID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BILLID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHOPNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHOPNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AMOUNT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AMOUNT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ITEM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ITEM)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.BILLID  }) |
+    @Html.ActionLink("Back to your Bills", "Index")
+</p>
